@@ -84,7 +84,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Bean
 	public AuthenticationEntryPoint unauthorizedEntryPoint() {
 	    return (request, response, authException) -> response.sendError(HttpServletResponse.SC_UNAUTHORIZED,
-	            "Unauthorized");
+	            "This is Unauthorized");
 	}
 
 	@Bean
