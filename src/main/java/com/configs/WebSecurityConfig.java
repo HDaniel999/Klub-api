@@ -1,6 +1,6 @@
 package com.configs;
 
-import java.util.List;
+import java.util.Arrays;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -52,17 +52,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
     	final CorsConfiguration configuration = new CorsConfiguration();
-    /**
-    *	configuration.setAllowedOrigins(List.of("*"));
-    *   configuration.setAllowedMethods(List.of("HEAD",
-    *           "GET", "POST", "PUT", "DELETE", "PATCH"));
-    **/
+    	
+    	configuration.setAllowedOrigins(Arrays.asList("*"));
+    	configuration.setAllowedMethods(Arrays.asList("HEAD","GET", "POST", "PUT", "DELETE", "PATCH"));
+    	
         // setAllowCredentials(true) is important, otherwise:
         // The value of the 'Access-Control-Allow-Origin' header in the response must not be the wildcard '*' when the request's credentials mode is 'include'.
         configuration.setAllowCredentials(false);
+        
         // setAllowedHeaders is important! Without it, OPTIONS preflight request
         // will fail with 403 Invalid CORS request
-        //configuration.setAllowedHeaders(List.of("Authorization", "Cache-Control", "Content-Type"));
+        
+        configuration.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control", "Content-Type"));
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
