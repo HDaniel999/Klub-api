@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.models.Restaurant;
 
 @CrossOrigin(
-origins = "http://localhost:4200", 
+origins = "*", 
 allowedHeaders = "*", 
 methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT})
 public interface RestaurantRepository extends CrudRepository<Restaurant, String> {

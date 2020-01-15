@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.models.User;
 
 @CrossOrigin(
-origins = "http://localhost:4200", 
+origins = "*", 
 allowedHeaders = "*", 
 methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT})
 public interface UserRepository extends MongoRepository<User, String> {

@@ -15,7 +15,7 @@ import com.models.Reservation;
 
 @RestController
 @CrossOrigin(
-origins = "http://localhost:4200/signup", 
+origins = "*", 
 allowedHeaders = "*", 
 methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT})
 public class ReservationController {

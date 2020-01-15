@@ -27,7 +27,7 @@ import com.services.CustomUserDetailsService;
 @RestController
 @RequestMapping("/api/auth")
 @CrossOrigin(
-origins = "http://localhost:4200/signup", 
+origins = "*", 
 allowedHeaders = "*", 
 methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT})
 public class AuthController {
